@@ -33,7 +33,6 @@ $resultado = $conexión->query($sql);
 
 //verificacion de la consulta
 if ($resultado->num_rows > 0) {
-  echo "<p> Bienvenido usuario '".$usuario."'";
   $sql = "INSERT INTO ingreso (tipo_doc, documento, usuario, password, recordar) VALUES('".$tipo_doc."' , '".$documento."' , '".$usuario."' , '".$password."' , '".$recordar."')";
   $conexión->query($sql);
 } else {
@@ -51,10 +50,14 @@ $conexión->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Tarjetas - Creación de Usuario</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+		  h1 { font-size: 60px; color: white; }
+		  h2 { color:white; }
+	  </style>
 </head>
 <body class="bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center p-4 font-sans" 
       style="background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80');">
-
-
+  	<h1> Bienvenido usuario <?php echo "$usuario"?><br><br><br><br></h1>
+	  <h2> Su saldo actual es de: $1.000,00 y tiene una deuda de $215.538.419,99</h2>
 </body>
 </html>
