@@ -1,7 +1,7 @@
 <?php
 
 //incluye la conexion del archivo conecta.php
-include ("../Clase 17 PHP&MySQL/conecta.php");
+include ("../conecta.php");
 
 //variables de 
 $tipo_doc = $_POST["tipo_doc"];
